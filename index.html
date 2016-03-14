@@ -20,19 +20,20 @@
         },
         methods: {
           getResponse: function () {
-            if ( this.userInput == 'hi' || this.userInput == 'hello') {
+            var userInput = this.userInput.toLowerCase().replace(/(\?|\'|\.)/g, "")
+            if ( userInput == 'hi' || userInput == 'hello' || userInput == 'yo' || userInput == 'whats up') {
               this.response = "Greetings, human!"
             }
-            else if ( this.userInput == 'how are you' ) {
+            else if ( userInput == 'how are you' ) {
               this.response = "I came into being through the excellent programming of my creator!"
             }
-            else if ( this.userInput == 'are you a bot' ) {
+            else if ( userInput == 'are you a bot' ) {
               this.response = "Who's to say? Who is anyone, really?"
             }
-            else if ( this.userInput == "What's your name?" ) {
+            else if ( userInput == "whats your name?" ) {
               this.response = "I'd tell you, but I'd have to kill you."
             }
-            else if ( this.userInput == 'do you like cats' ) {
+            else if ( userInput == 'do you like cats' ) {
               this.response = "Of course, I'm not a monster."
             }
             else {
