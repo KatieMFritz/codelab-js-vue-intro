@@ -1,0 +1,40 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title></title>
+      </head>
+      <body>
+        <p>What's your name?</p>
+    <input type="text" id="name-input">
+    <button id="clear-name-button">Clear</button>
+    <div id="response-to-name"></div>
+
+    <script>
+      var input = document.getElementById('name-input')
+      var response = document.getElementById('response-to-name')
+      var clearButton = document.getElementById('clear-name-button')
+
+      function render (userName) {
+        input.value = userName
+        if (userName) {
+          response.innerHTML = '<p>' +
+            'Hi, ' +
+            '<strong>' + userName + '</strong>' +
+          '</p>'
+        } else {
+          response.innerHTML = ''
+        }
+      }
+
+
+      input.oninput = function (event) {
+        render(event.target.value)
+      }
+
+      clearButton.onclick = function () {
+        render('')
+      }
+</script>
+      </body>
+    </html>
