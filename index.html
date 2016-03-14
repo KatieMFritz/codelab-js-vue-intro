@@ -8,13 +8,14 @@
   <body>
     <div id="chatbot">
       <input type="text" v-model="userInput">
-      <p>You said {{ userInput }}</p>
+      <p v-if="response">Chatbot says: {{ response }}</p>
     </div>
     <script>
       new Vue({
         el: '#chatbot',
         data: {
-          userInput: ''
+          userInput: '',
+          response: '',
         }
       })
     </script>
