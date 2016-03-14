@@ -7,11 +7,15 @@
   </head>
   <body>
     <div id="chatbot">
-      
+      <input type="text" v-model="userInput">
+      <p>You said {{ userInput }}</p>
     </div>
     <script>
       new Vue({
-        el: '#chatbot'
+        el: '#chatbot',
+        data: {
+          userInput: ''
+        }
       })
     </script>
   </body>
